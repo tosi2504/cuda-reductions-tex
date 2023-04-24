@@ -1,0 +1,11 @@
+void reduce(int * h_in, int * h_out, int len) {
+    // copy data into temporary array
+    int * temp = (int*)malloc(len*sizeof(int));
+    memcpy(temp, h_in, len*sizeof(int));
+
+    for (int level = 0; level < log2(len); level++) {
+        for (int i = 0; i < len; len += 2) {
+            h_out[i/2] = h_in[i] + h_in[i+1];
+        }
+    }
+}

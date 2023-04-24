@@ -1,0 +1,9 @@
+\contentsline {chapter}{\numberline {1}Introduction}{4}{}%
+\contentsline {section}{\numberline {1.1}From single-core CPUs over multi-core CPUs to GPUs}{4}{}%
+\contentsline {section}{\numberline {1.2}What is CUDA}{4}{}%
+\contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{7}{}%
+\contentsline {section}{\numberline {2.1}The importance of reductions}{7}{}%
+\contentsline {section}{\numberline {2.2}The tree reduction algorithm}{7}{}%
+\contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{8}{}%
+\contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{8}{}%
+\contentsline {chapter}{\numberline {A}Appendix One}{11}{}%

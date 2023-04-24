@@ -1,0 +1,68 @@
+\documentclass[12pt, twoside]{report}
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1)%3A_Basic_Structure
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, width=150mm, top=25mm, bottom=25mm, bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[backend=bibtex, style=alphabetic]{biblatex}
+\addbibresource{references.bib}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+
+\title{
+    {Hardware-oriented optimisation in CUDA} \\
+    {\large University of Regensburg} \\
+    {\includegraphics[width = 0.5\textwidth]{ur_logo.jpg}}
+}
+\author{Tobias Sizmann}
+\date{day month year}
+
+\begin{document}
+
+\maketitle
+
+\chapter*{Abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+\input{chapters/introduction.tex}
+
+\chapter{Tree Reduction on GPUs}
+\input{chapters/tree_reduction.tex}
+
+\appendix
+\chapter{Appendix One}
+\input{chapters/appendix1.tex}
+
+\printbibliography
+
+\end{document}

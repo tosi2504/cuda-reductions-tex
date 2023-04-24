@@ -1,0 +1,27 @@
+\relax 
+\bibstyle{biblatex}
+\bibdata{main-blx,references}
+\citation{biblatex-control}
+\abx@aux@refcontext{anyt/global//global/global}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{4}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}From single-core CPUs over multi-core CPUs to GPUs}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}What is CUDA}{4}{}\protected@file@percent }
+\newlabel{fig_tree_reduction}{{1.1}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Comparison of the basic architectural differences of a GPU and a CPU. In green the random access memory (RAM), in yellow the cache, in blue the flow control unit and in red the arithmetic-logic unit (ALU). Both designs feature a RAM that all threads have access to. The GPU is split into many small "CPUs" (vertical groups) with their own flow control and cache. These are called streaming multiprocessors (SMPs or SMs). Generally the cache hierachry is more complicated as depicted in the figure. However, the defining property here is that there exists a non-global cache level that is assigned to a group of ALUs, namely the SMs. Note that the notion of an ALU has slightly different meaning for a CPU and a GPU. For a CPU one ALU usually corresponds to one thread. For a GPU one ALU usually corresponds to a group of threads (for modern GPUs: 32), called a warp. }}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{7}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}The importance of reductions}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}The tree reduction algorithm}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Example of a tree reduction of ten elements. Note how there is a leftover after the second reduction. These are usually handled by zeropadding (i.e. adding zeros) after each step to make the number of elements divisible by 2. }}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{8}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce.c}{9}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce\textunderscore swapped\textunderscore loops.c}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix One}{11}{}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\abx@aux@read@bbl@mdfivesum{6453C26B054CF82854B5A9BBA6BE666A}
+\gdef \@abspage@last{11}
