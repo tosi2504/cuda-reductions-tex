@@ -16,5 +16,27 @@
   {}
 \endgroup
 
-\datalist[entry]{anyt/global//global/global}\enddatalist
+\datalist[entry]{anyt/global//global/global}
+  \entry{Harris}{online}{}
+    \name{author}{1}{}{%
+      {{hash=HM}{%
+         family={Harris},
+         familyi={H\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HM1}
+    \strng{fullhash}{HM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Har}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Optimizing parallel reduction in CUDA}
+    \verb{url}
+    \verb https://developer.download.nvidia.com/assets/cuda/files/reduction.pdf
+    \endverb
+  \endentry
+\enddatalist
 \endinput

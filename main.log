@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  25 APR 2023 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  26 APR 2023 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -729,40 +729,119 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
+Chapter 3.
+(./chapters/optimisations.tex [15
+
+] (./code/divergent_warps_worst.cu)
+(./code/divergent_warps_fixed.cu) (./code/kernel0_ifstatement.cu)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16] (./code/kernel1_ifstatement.cu)
+<images//coalesced_reduction.pdf, id=100, 426.79132pt x 241.84843pt>
+File: images//coalesced_reduction.pdf Graphic file (type pdf)
+<use images//coalesced_reduction.pdf>
+Package pdftex.def Info: images//coalesced_reduction.pdf  used on input line 73
+.
+(pdftex.def)             Requested size: 426.79028pt x 241.84784pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17 <./images//coalesced_reduction.pdf>] (./code/kernel2_forloop.cu)
+(./code/kernel2_load_and_add.cu)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18] (./code/kernel3_load_and_add.cu) (./code/kernel4_subroutine.cu)
+(./code/kernel4_forloop.cu))
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+Chapter 4.
+[21
+
+]
 Appendix A.
-(./chapters/appendix1.tex)
+(./chapters/appendix1.tex) [22
 
-LaTeX Warning: Empty bibliography on input line 66.
+]
+Overfull \hbox (18.43358pt too wide) in paragraph at lines 72--72
+[]\OT1/cmr/m/n/12 Mark Har-ris. \OT1/cmr/m/it/12 Op-ti-miz-ing par-al-lel re-du
+c-tion in CUDA\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmt
+t/m/n/12 https : / / developer .
+ []
 
-[15
+[23
 
 ] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13587 strings out of 480247
- 237031 string characters out of 5896150
- 1102403 words of memory out of 5000000
- 31353 multiletter control sequences out of 15000+600000
- 479317 words of font info for 67 fonts, out of 8000000 for 9000
+ 13878 strings out of 480247
+ 243268 string characters out of 5896150
+ 1102742 words of memory out of 5000000
+ 31611 multiletter control sequences out of 15000+600000
+ 479965 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,68p,1849b,1882s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmtt12.pfb>
-Output written on main.pdf (15 pages, 212265 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
+pfb>
+Output written on main.pdf (23 pages, 262866 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 185 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

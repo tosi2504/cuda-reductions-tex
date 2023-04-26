@@ -9,4 +9,11 @@
 \contentsline {subsection}{\numberline {2.3.2}Tree reduction in CUDA for small arrays}{10}{}%
 \contentsline {subsection}{\numberline {2.3.3}Tree reduction in CUDA for arbitrary array sizes}{12}{}%
 \contentsline {section}{\numberline {2.4}Conclusion}{14}{}%
-\contentsline {chapter}{\numberline {A}Appendix One}{15}{}%
+\contentsline {chapter}{\numberline {3}Optimisations}{15}{}%
+\contentsline {section}{\numberline {3.1}Starting point: The naive kernel}{15}{}%
+\contentsline {section}{\numberline {3.2}Divergent warps}{16}{}%
+\contentsline {section}{\numberline {3.3}Memory bank conflicts}{18}{}%
+\contentsline {section}{\numberline {3.4}Idle threads after load}{18}{}%
+\contentsline {section}{\numberline {3.5}Automatic synchronisation within a warp}{19}{}%
+\contentsline {chapter}{\numberline {4}Benchmarks}{21}{}%
+\contentsline {chapter}{\numberline {A}Appendix One}{22}{}%
