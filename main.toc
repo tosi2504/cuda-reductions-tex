@@ -6,4 +6,7 @@
 \contentsline {section}{\numberline {2.2}The tree reduction algorithm}{7}{}%
 \contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{8}{}%
 \contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{8}{}%
-\contentsline {chapter}{\numberline {A}Appendix One}{11}{}%
+\contentsline {subsection}{\numberline {2.3.2}Tree reduction in CUDA for small arrays}{10}{}%
+\contentsline {subsection}{\numberline {2.3.3}Tree reduction in CUDA for arbitrary array sizes}{12}{}%
+\contentsline {section}{\numberline {2.4}Conclusion}{14}{}%
+\contentsline {chapter}{\numberline {A}Appendix One}{15}{}%

@@ -16,5 +16,6 @@ void reduce(int * h_in, int * h_out, int len) {
 
     // return the result
     *h_out = temp[0];
+    free(temp);
     return;
 }

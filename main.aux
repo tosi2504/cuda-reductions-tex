@@ -18,10 +18,21 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Example of a tree reduction of ten elements. Note how there is a leftover after the second reduction. These are usually handled by zeropadding (i.e. adding zeros) after each step to make the number of elements divisible by 2. }}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{8}{}\protected@file@percent }
+\newlabel{fig_naive_reduction}{{2.3.1}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  Sketch of the implementation of the tree reduction algorithm presented in this section. The cells denote entries in the data array. Two arrows pointing into a cell denote addition of the source cells values and writing of the result into the target cell. The final result is found in the first cell of the array. }}{9}{}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce.c}{9}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce\textunderscore swapped\textunderscore loops.c}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix One}{11}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce\textunderscore swapped\textunderscore loops.c}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Tree reduction in CUDA for small arrays}{10}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore small\textunderscore kernel0.cu}{10}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/shared\textunderscore memory\textunderscore line.cu}{11}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation.cu}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces  Depicted is the schematic tree reduction in block structure for an array of length 16 and 4 threads per block. The first step requires 4 blocks and the second 1 block. The blocks run on the SMs of the GPU. The first step allows for four SMs and a total of 16 physical threads to be used in parallel. Between the two steps the output array is used as new input array. The second step can only make use of a single SM. }}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Tree reduction in CUDA for arbitrary array sizes}{12}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore full\textunderscore kernel0.cu}{13}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation\textunderscore full.cu}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Conclusion}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix One}{15}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \abx@aux@read@bbl@mdfivesum{6453C26B054CF82854B5A9BBA6BE666A}
-\gdef \@abspage@last{11}
+\gdef \@abspage@last{15}
