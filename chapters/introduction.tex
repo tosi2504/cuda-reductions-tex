@@ -35,13 +35,17 @@ How the GPU threads work exactly will be explored in this work.
 Generally, one can say that GPUs perform well in massively parallelisable computations where the single computations are not complex while CPUs excel at complicated single threaded problems (for example running the event loop of a desktop application).
 This shift to a higher number of threads rather than thread quality has been greatly motivated by scientific calculations, machine learning and graphics.
 
+In this work, the basics of GPU programming in CUDA will be introduced and a very important algorithm presented, namely the tree reduction.
+Using this algorithm as an example, a deeper look into the architecture of GPUs and the CUDA programming language will bring forth various optimisations.
+Finally, the highly optimized implementation of the tree reduction will be tested on a consumer grade setup and a high-performance computer and the results will be discussed.
+
 \section{What is CUDA}
 Writing code for a GPU is not as straight forward as for a CPU since it is more dependent on its hardware.
 Different GPU developers use different application programming interfaces (APIs).
 The biggest GPU designer Nvidia developed a framework called CUDA, which will be used in this work.
 It is simple to learn, offers efficient implementations and a plethora of literature and support.
 The downside is that it only supports Nvidia GPUs and is not open-source.
-An alternative would be OpenCL, which is open-source but harder to learn.
+An alternative would be OpenCL, which is open-source but harder to learn, or HIP, which is the CUDA equivalent by AMD and very similar to it.
 
 CUDA works as an extention to the C programming language and comes with its own compiler.
 Sections of code are distributed to either the CPU (called host) or the GPU (called device).

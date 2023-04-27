@@ -3,66 +3,74 @@
 \bibdata{main-blx,references}
 \citation{biblatex-control}
 \abx@aux@refcontext{anyt/global//global/global}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{3}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}From single-core CPUs over multi-core CPUs to GPUs}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}What is CUDA}{4}{}\protected@file@percent }
-\newlabel{fig_tree_reduction}{{1.1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Comparison of the basic architectural differences of a GPU and a CPU. In green the random access memory (RAM), in yellow the cache, in blue the flow control unit and in red the arithmetic-logic unit (ALU). Both designs feature a RAM that all threads have access to. The GPU is split into many small "CPUs" (vertical groups) with their own flow control and cache. These are called streaming multiprocessors (SMPs or SMs). Generally the cache hierachry is more complicated as depicted in the figure. However, the defining property here is that there exists a non-global cache level that is assigned to a group of ALUs, namely the SMs. Note that the notion of an ALU has slightly different meaning for a CPU and a GPU. For a CPU one ALU usually corresponds to one thread. For a GPU one ALU usually corresponds to a group of threads (for modern GPUs: 32), called a warp. }}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}From single-core CPUs over multi-core CPUs to GPUs}{3}{}\protected@file@percent }
+\newlabel{fig_tree_reduction}{{1.1}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Comparison of the basic architectural differences of a GPU and a CPU. In green the random access memory (RAM), in yellow the cache, in blue the flow control unit and in red the arithmetic-logic unit (ALU). Both designs feature a RAM that all threads have access to. The GPU is split into many small "CPUs" (vertical groups) with their own flow control and cache. These are called streaming multiprocessors (SMPs or SMs). Generally the cache hierachry is more complicated as depicted in the figure. However, the defining property here is that there exists a non-global cache level that is assigned to a group of ALUs, namely the SMs. Note that the notion of an ALU has slightly different meaning for a CPU and a GPU. For a CPU one ALU usually corresponds to one thread. For a GPU one ALU usually corresponds to a group of threads (for modern GPUs: 32), called a warp. }}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}What is CUDA}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{6}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}The importance of reductions}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}The tree reduction algorithm}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Example of a tree reduction of ten elements. Note how there is a leftover after the second reduction. These are usually handled by zeropadding (i.e. adding zeros) after each step to make the number of elements divisible by 2. }}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{8}{}\protected@file@percent }
-\newlabel{fig_naive_reduction}{{2.3.1}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  Sketch of the implementation of the tree reduction algorithm presented in this section. The cells denote entries in the data array. Two arrows pointing into a cell denote addition of the source cells values and writing of the result into the target cell. The final result is found in the first cell of the array. }}{9}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce.c}{9}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce\textunderscore swapped\textunderscore loops.c}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Tree reduction in CUDA for small arrays}{10}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore small\textunderscore kernel0.cu}{10}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/shared\textunderscore memory\textunderscore line.cu}{11}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation.cu}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces  Depicted is the schematic tree reduction in block structure for an array of length 16 and 4 threads per block. The first step requires 4 blocks and the second 1 block. The blocks run on the SMs of the GPU. The first step allows for four SMs and a total of 16 physical threads to be used in parallel. Between the two steps the output array is used as new input array. The second step can only make use of a single SM. }}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Tree reduction in CUDA for arbitrary array sizes}{12}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore full\textunderscore kernel0.cu}{13}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation\textunderscore full.cu}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Conclusion}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}The importance of reductions}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}The tree reduction algorithm}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Example of a tree reduction of ten elements. Note how there is a leftover after the second reduction. These are usually handled by zeropadding (i.e. adding zeros) after each step to make the number of elements divisible by 2. }}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Naive implementation with CUDA}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Serial tree reduction on a CPU}{7}{}\protected@file@percent }
+\newlabel{fig_naive_reduction}{{2.3.1}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  Sketch of the implementation of the tree reduction algorithm presented in this section. The cells denote entries in the data array. Two arrows pointing into a cell denote addition of the source cells values and writing of the result into the target cell. The final result is found in the first cell of the array. }}{8}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce.c}{8}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/host\textunderscore reduce\textunderscore swapped\textunderscore loops.c}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Tree reduction in CUDA for small arrays}{9}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore small\textunderscore kernel0.cu}{9}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/shared\textunderscore memory\textunderscore line.cu}{10}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation.cu}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces  Depicted is the schematic tree reduction in block structure for an array of length 16 and 4 threads per block. The first step requires 4 blocks and the second 1 block. The blocks run on the SMs of the GPU. The first step allows for four SMs and a total of 16 physical threads to be used in parallel. Between the two steps the output array is used as new input array. The second step can only make use of a single SM. }}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Tree reduction in CUDA for arbitrary array sizes}{11}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/device\textunderscore full\textunderscore kernel0.cu}{12}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel\textunderscore invokation\textunderscore full.cu}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Conclusion}{13}{}\protected@file@percent }
 \citation{Harris}
 \abx@aux@cite{0}{Harris}
 \abx@aux@segm{0}{0}{Harris}
 \citation{Harris}
 \abx@aux@cite{0}{Harris}
 \abx@aux@segm{0}{0}{Harris}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Optimisations}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Optimisations}{14}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Starting point: The naive kernel}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Divergent warps}{16}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/divergent\textunderscore warps\textunderscore worst.cu}{16}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/divergent\textunderscore warps\textunderscore fixed.cu}{16}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel0\textunderscore ifstatement.cu}{16}{}\protected@file@percent }
-\newlabel{fig_coalesced_reduction}{{3.3}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Depicted is the same algorithm as in fig. 2.3.1\hbox {} for 8 elements. However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous. Note that one needs to be careful not to introduce an additional race condition when accessing the elements. }}{17}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel1\textunderscore ifstatement.cu}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Memory bank conflicts}{18}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel2\textunderscore forloop.cu}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Idle threads after load}{18}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel2\textunderscore load\textunderscore and\textunderscore add.cu}{18}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel3\textunderscore load\textunderscore and\textunderscore add.cu}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Automatic synchronisation within a warp}{19}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel4\textunderscore subroutine.cu}{19}{}\protected@file@percent }
-\@writefile{lol}{\contentsline {lstlisting}{code/kernel4\textunderscore forloop.cu}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Benchmarks}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Starting point: The naive kernel}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Divergent warps}{15}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/divergent\textunderscore warps\textunderscore worst.cu}{15}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/divergent\textunderscore warps\textunderscore fixed.cu}{15}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel0\textunderscore ifstatement.cu}{15}{}\protected@file@percent }
+\newlabel{fig_coalesced_reduction}{{3.3}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Depicted is the same algorithm as in fig. 2.3.1\hbox {} for 8 elements. However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous. Note that one needs to be careful not to introduce an additional race condition when accessing the elements. }}{16}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel1\textunderscore ifstatement.cu}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Memory bank conflicts}{17}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel2\textunderscore forloop.cu}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Idle threads after load}{17}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel2\textunderscore load\textunderscore and\textunderscore add.cu}{17}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel3\textunderscore load\textunderscore and\textunderscore add.cu}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Implicit synchronisation within a warp}{18}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel4\textunderscore subroutine.cu}{18}{}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{code/kernel4\textunderscore forloop.cu}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Further optimisations}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Benchmarks}{20}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix One}{22}{}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Parallelisation parameters}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Scaling of the performance towards larger and smaller array sizes}{20}{}\protected@file@percent }
+\newlabel{fig_num_threads}{{4.1}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces  Benchmarks of the optimised kernel for \( 2^{27} \) 32-bit integers on a RTX 3070 (black) and A100 (red) for different number of threads per block. While the A100 outperformes the RTX 3070 as expected, they show they same characteristic in respect to the number of threads per block. The optimum lies somewhere between 128 and 256 threads. }}{21}{}\protected@file@percent }
+\newlabel{fig_scaling}{{4.2}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces  Performance of the reduction kernel over increasing 32-bit array sizes for a RTX 3070 and an A100. All point represent the mean of 1000 measurements. One can see nicely the transition to linear scaling. }}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Dependence of the performance on the datatype}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusion}{22}{}\protected@file@percent }
+\newlabel{fig_datatypes}{{4.3}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces  Performance of the reduction kernel for several datatypes over an array with \( 2^{28} \) elements on a RTX 3070 (black) and an A100 (red). Each data point reflects the mean of 1000 measurements. The execution time is proportional with the size of the datatype in the case of the RTX 3070, while for the A100 the larger datatypes are slightly more efficient in terms of bandwidth. }}{23}{}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{C60A321FF7423539893C929ED261EA70}
 \abx@aux@defaultrefcontext{0}{Harris}{anyt/global//global/global}
 \abx@aux@defaultlabelprefix{0}{Harris}{}
-\gdef \@abspage@last{23}
+\gdef \@abspage@last{24}

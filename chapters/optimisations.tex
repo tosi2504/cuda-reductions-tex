@@ -8,7 +8,7 @@ The bandwidth can be calculated using the formula
 \end{equation}
 The execution is defined as only the reduction and not the copying of the data to the GPU, which is reasonable, since for most use-cases the data would already be present in the GPU memory.
 
-All achieved bandwidths shown in this chapter will be done on a Nvidia GeForce RTX 3070 (bandwidth: 448 GB/s) with an input array of \( 2^{27} (1.3\cdot 10^8)\) 64-bit integers. 
+All achieved bandwidths shown in this chapter will be done on a Nvidia GeForce RTX 3070 (bandwidth: 448 GB/s) with an input array of \( 2^{28} (1.3\cdot 10^8)\) 32-bit integers. 
 This is a relatively new GPU (released Q4 2020).
 The GPU and the software that comes with it already have optimisations implemented that might mess with the results.
 To this end, data from an older setup (Nvidia G80) is provided as well published by \cite{Harris}.
@@ -124,8 +124,8 @@ The measured bandwidth is 346.4 (\( \pm 0.4\% \)) GBytes/s, which is an increase
 The older setup achieved a speedup of 78\%.
 Since the compiler and the hardware are not able to make algorithmic improvements, it is expected that the speedups for the older and newer setup are in the same order of magnitude.
 
-\section{Automatic synchronisation within a warp}
-As mentioned before, threads within a warp are synchronized by hardware constraints if they do not branch.
+\section{Implicit synchronisation within a warp}
+As mentioned before, threads within a warp are implicitly synchronized by hardware constraints if they do not branch.
 If they branch, threads of the same branch are still synchronized.
 This can be used to remove some \texttt{\_\_syncthreads()} calls.
 In our case, if \texttt{stride} \(\le\) 32, all non-idling threads are in a single warp. 
@@ -146,4 +146,28 @@ The domain of the for-loop is shortened and the subroutine is called afterwards.
 The achieved bandwidth is 413.0 (\( \pm 0.7\% \)) GBytes/s, which is an increase of roughly 20\%.
 The older setup achieved a speedup of 80\%.
 Unrolling for-loops is a classic compiler optimisation and most likely the reason for the discrepancy.
+
+A word of warning is required here.
+Implicit synchronisation is considered a bad practice as the code does not explicitly show, that the threads a re synchronised (no call to a blocking function).
+New versions of CUDA feature a function \texttt{\_\_syncwarps()} which explicitly synchronizes threads within a warp.
+This achieves the same goal, but with much better readability.
+We omitted this function, to put emphasis on the implicit synchronisation by the GPU.
+
+\section{Further optimisations}
+At this point we have achieved a level of optimisation, which makes use of 92\% of the total memory bandwidth.
+This can be considered as close to perfect and further optimisations are unlikely to yield a significant speedup.
+Two specific optimisations could be thought of, however, which might yield a speedup in different situations.
+
+First, one could reduce the instruction overhead by further loop-unrolling.
+E.g., using C++ templates, which are supported by CUDA, one could completely unroll the for-loop, assuming that either the number of threads per block are known at compile time or is a power of two.
+
+Secondly, one could make a parallel-serial trade-off.
+While parallelisation is good - especially if it is work-efficient (i.e. the algorithm requires the same work in serial or parallel) - it does create an overhead.
+This overhead could potentially be decreased by letting each thread also do serial addition over a certain amout of array elements before starting the tree reduction.
+Such a procedure is often called "algorithm cascading".
+
+In the next chapter the final version of the kernel will be investigated more closely in respect to its performance in a super computer environment, its scaling with larger and smaller array sizes and its behaviour when working with different data types (float, double, 64-bit integers).
+
+
+
 

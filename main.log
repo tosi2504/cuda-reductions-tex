@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  26 APR 2023 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  27 APR 2023 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,24 +595,23 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//ur_logo.jpg>] [2
-
-] (./main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//ur_logo.jpg>] (.
+/main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
 
-[3
+[2
 
 ]
 Chapter 1.
 (./chapters/introduction.tex
-<images//cpu_vs_gpu.pdf, id=16, 426.79132pt x 233.3126pt>
+<images//cpu_vs_gpu.pdf, id=13, 426.79132pt x 233.3126pt>
 File: images//cpu_vs_gpu.pdf Graphic file (type pdf)
 <use images//cpu_vs_gpu.pdf>
 Package pdftex.def Info: images//cpu_vs_gpu.pdf  used on input line 5.
 (pdftex.def)             Requested size: 426.79028pt x 233.31203pt.
- [4
+ [3
 
 ]
 
@@ -623,7 +622,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5 <./images//cpu_vs_gpu.pdf>])
+[4 <./images//cpu_vs_gpu.pdf>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -632,10 +631,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6]
+[5]
 Chapter 2.
 (./chapters/tree_reduction.tex
-<images//tree_reduction.pdf, id=35, 426.79132pt x 256.0748pt>
+<images//tree_reduction.pdf, id=32, 426.79132pt x 256.0748pt>
 File: images//tree_reduction.pdf Graphic file (type pdf)
 <use images//tree_reduction.pdf>
 Package pdftex.def Info: images//tree_reduction.pdf  used on input line 22.
@@ -643,10 +642,10 @@ Package pdftex.def Info: images//tree_reduction.pdf  used on input line 22.
 
 Underfull \vbox (badness 1127) has occurred while \output is active []
 
- [7
+ [6
 
 ]
-<images//naive_reduction.pdf, id=42, 426.79132pt x 241.84843pt>
+<images//naive_reduction.pdf, id=38, 426.79132pt x 241.84843pt>
 File: images//naive_reduction.pdf Graphic file (type pdf)
 <use images//naive_reduction.pdf>
 Package pdftex.def Info: images//naive_reduction.pdf  used on input line 47.
@@ -666,7 +665,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8 <./images//tree_reduction.pdf>] (./code/host_reduce.c)
+[7 <./images//tree_reduction.pdf>] (./code/host_reduce.c)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -675,7 +674,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9 <./images//naive_reduction.pdf>] (./code/host_reduce_swapped_loops.c)
+[8 <./images//naive_reduction.pdf>] (./code/host_reduce_swapped_loops.c)
 (./code/device_small_kernel0.cu
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -685,7 +684,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10]) (./code/shared_memory_line.cu) (./code/kernel_invokation.cu)
+[9]) (./code/shared_memory_line.cu) (./code/kernel_invokation.cu)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -694,8 +693,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11]
-<images//block_reduction.pdf, id=75, 426.79132pt x 156.49016pt>
+[10]
+<images//block_reduction.pdf, id=72, 426.79132pt x 156.49016pt>
 File: images//block_reduction.pdf Graphic file (type pdf)
 <use images//block_reduction.pdf>
 Package pdftex.def Info: images//block_reduction.pdf  used on input line 130.
@@ -709,7 +708,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12 <./images//block_reduction.pdf>] (./code/device_full_kernel0.cu)
+[11 <./images//block_reduction.pdf>] (./code/device_full_kernel0.cu)
 (./code/kernel_invokation_full.cu
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -719,7 +718,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13]))
+[12]))
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -728,9 +727,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14]
+[13]
 Chapter 3.
-(./chapters/optimisations.tex [15
+(./chapters/optimisations.tex [14
 
 ] (./code/divergent_warps_worst.cu)
 (./code/divergent_warps_fixed.cu) (./code/kernel0_ifstatement.cu)
@@ -742,8 +741,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16] (./code/kernel1_ifstatement.cu)
-<images//coalesced_reduction.pdf, id=100, 426.79132pt x 241.84843pt>
+[15] (./code/kernel1_ifstatement.cu)
+<images//coalesced_reduction.pdf, id=97, 426.79132pt x 241.84843pt>
 File: images//coalesced_reduction.pdf Graphic file (type pdf)
 <use images//coalesced_reduction.pdf>
 Package pdftex.def Info: images//coalesced_reduction.pdf  used on input line 73
@@ -761,7 +760,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17 <./images//coalesced_reduction.pdf>] (./code/kernel2_forloop.cu)
+[16 <./images//coalesced_reduction.pdf>] (./code/kernel2_forloop.cu)
 (./code/kernel2_load_and_add.cu)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -771,8 +770,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18] (./code/kernel3_load_and_add.cu) (./code/kernel4_subroutine.cu)
-(./code/kernel4_forloop.cu))
+[17] (./code/kernel3_load_and_add.cu) (./code/kernel4_subroutine.cu)
+(./code/kernel4_forloop.cu)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -782,6 +790,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+Chapter 4.
+(./chapters/benchmarks.tex
+<images//num_threads.pdf, id=119, 426.393pt x 289.08pt>
+File: images//num_threads.pdf Graphic file (type pdf)
+<use images//num_threads.pdf>
+Package pdftex.def Info: images//num_threads.pdf  used on input line 13.
+(pdftex.def)             Requested size: 426.39195pt x 289.07928pt.
+<images//scaling.pdf, id=121, 426.393pt x 289.08pt>
+File: images//scaling.pdf Graphic file (type pdf)
+<use images//scaling.pdf>
+Package pdftex.def Info: images//scaling.pdf  used on input line 35.
+(pdftex.def)             Requested size: 426.39195pt x 289.07928pt.
+
+Overfull \hbox (17.26837pt too wide) in paragraph at lines 53--53
+[]\OT1/cmr/bx/n/17.28 Dependence of the per-for-mance on the datatype 
+ []
+
+<images//datatypes.pdf, id=122, 426.393pt x 216.81pt>
+File: images//datatypes.pdf Graphic file (type pdf)
+<use images//datatypes.pdf>
+Package pdftex.def Info: images//datatypes.pdf  used on input line 57.
+(pdftex.def)             Requested size: 426.39195pt x 216.80946pt.
+[20
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 27.05003pt, for example:
+(fancyhdr)                \setlength{\headheight}{27.05003pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
+
+[21 <./images//num_threads.pdf>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -790,39 +832,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]
-Chapter 4.
-[21
+[22 <./images//scaling.pdf>]
 
-]
-Appendix A.
-(./chapters/appendix1.tex) [22
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-]
-Overfull \hbox (18.43358pt too wide) in paragraph at lines 72--72
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23 <./images//datatypes.pdf>]
+Overfull \hbox (18.43358pt too wide) in paragraph at lines 67--67
 []\OT1/cmr/m/n/12 Mark Har-ris. \OT1/cmr/m/it/12 Op-ti-miz-ing par-al-lel re-du
 c-tion in CUDA\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmt
 t/m/n/12 https : / / developer .
  []
 
-[23
+[24
 
 ] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13878 strings out of 480247
- 243268 string characters out of 5896150
- 1102742 words of memory out of 5000000
- 31611 multiletter control sequences out of 15000+600000
+ 13906 strings out of 480247
+ 243997 string characters out of 5896150
+ 1102809 words of memory out of 5000000
+ 31636 multiletter control sequences out of 15000+600000
  479965 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,68p,1849b,1882s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -838,10 +875,10 @@ msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb>
-Output written on main.pdf (23 pages, 262866 bytes).
+Output written on main.pdf (24 pages, 339093 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
