@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  27 APR 2023 21:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.29)  24 MAY 2023 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,38 +482,57 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
-\@quotelevel=\count410
-\@quotereset=\count411
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen162
+\captionmargin@=\dimen163
+\captionwidth=\dimen164
+\caption@tempdima=\dimen165
+\caption@indent=\dimen166
+\caption@parindent=\dimen167
+\caption@hangindent=\dimen168
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count410
+\c@continuedfloat=\count411
+Package caption Info: listings package is loaded.
+)
+\@quotelevel=\count412
+\@quotereset=\count413
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count412
-\scratchdimen=\dimen162
+\scratchcounter=\count414
+\scratchdimen=\dimen169
 \scratchbox=\box55
-\nofMPsegments=\count413
-\nofMParguments=\count414
+\nofMPsegments=\count415
+\nofMParguments=\count416
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count415
-\MPscratchDim=\dimen163
-\MPnumerator=\count416
-\makeMPintoPDFobject=\count417
+\MPscratchCnt=\count417
+\MPscratchDim=\dimen170
+\MPnumerator=\count418
+\makeMPintoPDFobject=\count419
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -575,20 +594,22 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 48.
-Package biblatex Info: Reference segment=0 on input line 48.
-\c@lstlisting=\count418
+Package biblatex Info: Reference section=0 on input line 50.
+Package biblatex Info: Reference segment=0 on input line 50.
+\c@lstlisting=\count420
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 <images//ur_logo.jpg, id=1, 513.92pt x 513.92pt>
 File: images//ur_logo.jpg Graphic file (type jpg)
 <use images//ur_logo.jpg>
-Package pdftex.def Info: images//ur_logo.jpg  used on input line 50.
+Package pdftex.def Info: images//ur_logo.jpg  used on input line 52.
 (pdftex.def)             Requested size: 213.39566pt x 213.39828pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -606,12 +627,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 Chapter 1.
 (./chapters/introduction.tex
-<images//cpu_vs_gpu.pdf, id=13, 426.79132pt x 233.3126pt>
+<images//cpu_trend.png, id=13, 1117.46516pt x 616.95758pt>
+File: images//cpu_trend.png Graphic file (type png)
+<use images//cpu_trend.png>
+Package pdftex.def Info: images//cpu_trend.png  used on input line 5.
+(pdftex.def)             Requested size: 426.79134pt x 235.63248pt.
+<images//cpu_vs_gpu.pdf, id=14, 426.79132pt x 233.3126pt>
 File: images//cpu_vs_gpu.pdf Graphic file (type pdf)
 <use images//cpu_vs_gpu.pdf>
-Package pdftex.def Info: images//cpu_vs_gpu.pdf  used on input line 5.
+Package pdftex.def Info: images//cpu_vs_gpu.pdf  used on input line 16.
 (pdftex.def)             Requested size: 426.79028pt x 233.31203pt.
- [3
+
+
+Package caption Warning: \label without proper reference on input line 3.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_cpu_trend' on page 3 undefined on input line 31.
+
+[3
 
 ]
 
@@ -622,7 +656,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4 <./images//cpu_vs_gpu.pdf>])
+[4 <./images//cpu_trend.png> <./images//cpu_vs_gpu.pdf>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -634,7 +668,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [5]
 Chapter 2.
 (./chapters/tree_reduction.tex
-<images//tree_reduction.pdf, id=32, 426.79132pt x 256.0748pt>
+<images//tree_reduction.pdf, id=34, 426.79132pt x 256.0748pt>
 File: images//tree_reduction.pdf Graphic file (type pdf)
 <use images//tree_reduction.pdf>
 Package pdftex.def Info: images//tree_reduction.pdf  used on input line 22.
@@ -645,11 +679,19 @@ Underfull \vbox (badness 1127) has occurred while \output is active []
  [6
 
 ]
-<images//naive_reduction.pdf, id=38, 426.79132pt x 241.84843pt>
+<images//naive_reduction.pdf, id=40, 426.79132pt x 241.84843pt>
 File: images//naive_reduction.pdf Graphic file (type pdf)
 <use images//naive_reduction.pdf>
 Package pdftex.def Info: images//naive_reduction.pdf  used on input line 47.
 (pdftex.def)             Requested size: 426.79028pt x 241.84784pt.
+
+
+Package caption Warning: \label without proper reference on input line 45.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_naive_reduction' on page 7 undefined on input lin
+e 63.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -694,10 +736,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-<images//block_reduction.pdf, id=72, 426.79132pt x 156.49016pt>
+<images//block_reduction.pdf, id=74, 426.79132pt x 156.49016pt>
 File: images//block_reduction.pdf Graphic file (type pdf)
 <use images//block_reduction.pdf>
-Package pdftex.def Info: images//block_reduction.pdf  used on input line 130.
+Package pdftex.def Info: images//block_reduction.pdf  used on input line 134.
 (pdftex.def)             Requested size: 426.79028pt x 156.48976pt.
 
 
@@ -732,7 +774,7 @@ Chapter 3.
 (./chapters/optimisations.tex [14
 
 ] (./code/divergent_warps_worst.cu)
-(./code/divergent_warps_fixed.cu) (./code/kernel0_ifstatement.cu)
+(./code/divergent_warps_fixed.cu) (./code/kernel0_ifstatement.cu
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -741,16 +783,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15] (./code/kernel1_ifstatement.cu)
-<images//coalesced_reduction.pdf, id=97, 426.79132pt x 241.84843pt>
+[15]) (./code/kernel1_ifstatement.cu)
+<images//coalesced_reduction.pdf, id=99, 426.79132pt x 241.84843pt>
 File: images//coalesced_reduction.pdf Graphic file (type pdf)
 <use images//coalesced_reduction.pdf>
-Package pdftex.def Info: images//coalesced_reduction.pdf  used on input line 73
+Package pdftex.def Info: images//coalesced_reduction.pdf  used on input line 89
 .
 (pdftex.def)             Requested size: 426.79028pt x 241.84784pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Package caption Warning: \label without proper reference on input line 45.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_naive_reduction' on page 16 undefined on input li
+ne 94.
+
+
+Package caption Warning: \label without proper reference on input line 45.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_naive_reduction' on page 16 undefined on input li
+ne 94.
+
+
+Package caption Warning: \label without proper reference on input line 45.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_naive_reduction' on page 16 undefined on input li
+ne 110.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -760,8 +823,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16 <./images//coalesced_reduction.pdf>] (./code/kernel2_forloop.cu)
-(./code/kernel2_load_and_add.cu)
+[16]
+
+Package caption Warning: \label without proper reference on input line 87.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_coalesced_reduction' on page 17 undefined on inpu
+t line 119.
+
+(./code/kernel2_forloop.cu) (./code/kernel2_load_and_add.cu
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -770,8 +841,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17] (./code/kernel3_load_and_add.cu) (./code/kernel4_subroutine.cu)
-(./code/kernel4_forloop.cu)
+[17 <./images//coalesced_reduction.pdf>]) (./code/kernel3_load_and_add.cu)
+(./code/kernel4_subroutine.cu) (./code/kernel4_forloop.cu)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -792,26 +863,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [19]
 Chapter 4.
 (./chapters/benchmarks.tex
-<images//num_threads.pdf, id=119, 426.393pt x 289.08pt>
+<images//num_threads.pdf, id=121, 426.39299pt x 289.08pt>
 File: images//num_threads.pdf Graphic file (type pdf)
 <use images//num_threads.pdf>
 Package pdftex.def Info: images//num_threads.pdf  used on input line 13.
-(pdftex.def)             Requested size: 426.39195pt x 289.07928pt.
-<images//scaling.pdf, id=121, 426.393pt x 289.08pt>
+(pdftex.def)             Requested size: 426.39194pt x 289.07928pt.
+<images//scaling.pdf, id=122, 426.393pt x 289.08pt>
 File: images//scaling.pdf Graphic file (type pdf)
 <use images//scaling.pdf>
 Package pdftex.def Info: images//scaling.pdf  used on input line 35.
 (pdftex.def)             Requested size: 426.39195pt x 289.07928pt.
 
+
+Package caption Warning: \label without proper reference on input line 33.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_scaling' on page 20 undefined on input line 44.
+
+
 Overfull \hbox (17.26837pt too wide) in paragraph at lines 53--53
 []\OT1/cmr/bx/n/17.28 Dependence of the per-for-mance on the datatype 
  []
 
-<images//datatypes.pdf, id=122, 426.393pt x 216.81pt>
+<images//datatypes.pdf, id=124, 426.39299pt x 216.81pt>
 File: images//datatypes.pdf Graphic file (type pdf)
 <use images//datatypes.pdf>
 Package pdftex.def Info: images//datatypes.pdf  used on input line 57.
-(pdftex.def)             Requested size: 426.39195pt x 216.80946pt.
+(pdftex.def)             Requested size: 426.39194pt x 216.80946pt.
 [20
 
 ]
@@ -823,7 +902,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-15.05003pt}.
 
-[21 <./images//num_threads.pdf>])
+[21 <./images//num_threads.pdf>]
+
+Package caption Warning: \label without proper reference on input line 55.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig_datatypes' on page 22 undefined on input line 67.
+
+
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -842,24 +930,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23 <./images//datatypes.pdf>]
-Overfull \hbox (18.43358pt too wide) in paragraph at lines 67--67
-[]\OT1/cmr/m/n/12 Mark Har-ris. \OT1/cmr/m/it/12 Op-ti-miz-ing par-al-lel re-du
-c-tion in CUDA\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmt
-t/m/n/12 https : / / developer .
+Overfull \hbox (5.00984pt too wide) in paragraph at lines 69--69
+[]\OT1/cmr/m/n/12 Intel. \OT1/cmr/m/it/12 In-tel's First Mi-cro-pro-ces-sor\OT1
+/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : $\OT1/cmtt/m/n/12 https : /
+ / www . intel . de / content /
  []
 
 [24
 
 ] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13906 strings out of 480247
- 243997 string characters out of 5896150
- 1102809 words of memory out of 5000000
- 31636 multiletter control sequences out of 15000+600000
+ 15184 strings out of 480247
+ 269443 string characters out of 5896150
+ 1102600 words of memory out of 5000000
+ 32906 multiletter control sequences out of 15000+600000
  479965 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,12n,68p,1849b,1882s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -875,10 +966,10 @@ msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb>
-Output written on main.pdf (24 pages, 339093 bytes).
+Output written on main.pdf (24 pages, 360180 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 272 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

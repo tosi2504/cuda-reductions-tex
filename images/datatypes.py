@@ -14,8 +14,8 @@ rtx3070["float"] = 2594.71
 rtx3070["double"] = 5172.44
 
 X = ["int32", "int64", "float", "double"]
-Y = [2597.7, 5170.51, 2594.71, 5172.44]
-Ysuper = [882.512, 1508.18, 969.211, 1509.76]
+Y = 8*2**27/np.array([2597.7, 5170.51/2, 2594.71, 5172.44/2])/1000
+Ysuper = 8*2**27/np.array([882.512, 1508.18/2, 969.211, 1509.76/2])/1000
 
 a100 = dict()
 a100["int32"] = 882.512
@@ -26,7 +26,7 @@ a100["double"] = 1509.76
 
 fig, (axr, axa) = plt.subplots(1, 2)
 axr.bar(X, Y, color="black")
-axr.set_ylabel("Mean execution time in $\mu s$")
+axr.set_ylabel("Mean bandwidth in GB/s")
 axa.bar(X, Ysuper, color="red")
 
 

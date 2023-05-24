@@ -38,5 +38,71 @@
     \verb https://developer.download.nvidia.com/assets/cuda/files/reduction.pdf
     \endverb
   \endentry
+
+  \entry{Intel4004}{online}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={Intel},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Int}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Intel's First Microprocessor}
+    \verb{url}
+    \verb https://www.intel.de/content/www/de/de/history/museum-story-of-intel-
+    \verb 4004.html
+    \endverb
+  \endentry
+
+  \entry{programming_guide}{online}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={Nvidia},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nvi23}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{CUDA C++ Programming Guide}
+    \verb{url}
+    \verb https://docs.nvidia.com/cuda/cuda-c-programming-guide/
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{Rupp}{online}{}
+    \name{author}{1}{}{%
+      {{hash=RK}{%
+         family={Rupp},
+         familyi={R\bibinitperiod},
+         given={Karl},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RK1}
+    \strng{fullhash}{RK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Rup18}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{40 Years of Microprocessor Trend Data}
+    \verb{url}
+    \verb https://www.karlrupp.net/2015/06/40-years-of-microprocessor-trend-dat
+    \verb a/
+    \endverb
+    \field{year}{2018}
+  \endentry
 \enddatalist
 \endinput
