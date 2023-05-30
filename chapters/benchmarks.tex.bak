@@ -1,31 +1,31 @@
 So far we have shown how to implement and optimize tree reductions in CUDA.
 The goal of this chapter is to investigate the properties of the optimized kernel more closely and to provide quantitative data on how the kernel performs. 
 The following question will be answered:
-How should the parallelization parameters (in our case only the number of threads per block) be chosen?
+How should the parallelisation parameters (in our case only the number of threads per block) be chosen?
 How does the kernel scale with larger and smaller array sizes?
 How does the underlying data type (int32, int64, float, double, complex float, complex double) affect performance?
 
 
-\section{Parallelization parameters}
+\section{Parallelisation parameters}
 
 \begin{figure}
     \centering
     \includegraphics{num_threads.pdf}
     \caption{
-        Benchmarks of the optimized kernel for \( 2^{27} \) 32-bit integers on a RTX 3070 (black) and A100 (red) for different number of threads per block.
-        While the A100 outperforms the RTX 3070 as expected, they show they same characteristic in respect to the number of threads per block.
+        Benchmarks of the optimised kernel for \( 2^{27} \) 32-bit integers on a RTX 3070 (black) and A100 (red) for different number of threads per block.
+        While the A100 outperformes the RTX 3070 as expected, they show they same characteristic in respect to the number of threads per block.
         The optimum lies somewhere between 128 and 256 threads.
     } \label{fig_num_threads}
 \end{figure}
 
-The choice of the number of threads per block can have a massive impact on the performance of the application.
-Usually, the optimum cannot be predicted theoretically as this becomes unfeasibly complex even for simple code.
+The choice of the number of threads can have a massive impact on the performance of the application.
+Usually, the optimum cannot be predicted theoretically as this becomes unfeasably complex even for simple code.
 Different algorithms behave differently and it is hard to make a general statement about the optimum.
-An expected behavior, however, is the divergence for a low number of threads per block.
-Here, the parallelization overhead becomes very large and the hardware occupancy low.
+An expected behaviour, however, is the divergence for a low number of threads per block.
+Here, the parallelisation overhead becomes very large and the hardware occupancy low.
 
-The best way to approach this problem is to do test-runs of the desired calculation to find the optimum and then commit to the choice.
-In our case, the optimum lies between 128 and 256 threads for both the RTX 3070 and the A100 (see Fig. \ref{fig_num_threads}).
+The best way to approach this problem is to do test-runs of the desired calculation to find the optimum and the commit to the choice.
+In our case, the optimum lies between 128 and 256 threads for both the RTX 3070 and the A100.
 For the rest of the benchmarks we will therefore use 256 threads per block.
 
 \section{Scaling of the performance towards larger and smaller array sizes}
@@ -41,13 +41,13 @@ For the rest of the benchmarks we will therefore use 256 threads per block.
 \end{figure}
 
 Oftentimes, the GPUs only start to be effective for large problem sizes.
-This behavior is depicted in fig. \ref{fig_scaling}.
+This behaviour is depicted in fig. \ref{fig_scaling}.
 The expected linear scaling in problem size is only achieved after a certain threshold.
-The cause of this is most likely host code overhead, parallelization overhead and device latency.
+The cause of this is most likely host code overhead, parallelisation overhead and device latency.
 Interestingly, the RTX 3070 performs better for small array sizes.
 This might be very setup dependent, however (host memory speed, CPU, etc).
 
-Both GPUs converge towards 92\% of their respective bandwidths (RTX 3070: 448 GB/s, A100: 1.555 GB/s).
+Both GPUs converge towards 92\% of their respective bandwidths (RTX 3070: 448 GBytes/s, A100: 1.555 GBytes/s).
 The A100 is approximately three times faster than the RTX 3070.
 
 \section{Dependence of the performance on the datatype}
@@ -67,14 +67,14 @@ The execution time also dependents on the underlying datatype.
 In our case this dependence is depicted in fig. \ref{fig_datatypes}.
 In the case of the RTX 3070 the execution time is perfectly proportional to the bit size of the datatype.
 This is expected as the reduction algorithm is bottlenecked by bandwidth.
-Interestingly, this behavior is not so trivial for the A100.
+Interestingly, this behaviour is not so trivial for the A100.
 The A100 is slightly more efficient for the larger datatypes, int64 and double, than for the smaller ones, int32 and float.
 This can be explained by the purpose of the A100 as a scientific GPU.
 The A100 is specialized on double precision calculations, while the RTX3070's purpose - as a consumer grade GPU - is to be an all-rounder \cite{programming_guide}.
 
 \section{Conclusion}
 The most important learning from the benchmarks is that the presented implementation of tree reduction is able to achieve top performance on two different Nvidia platforms.
-This shows that the optimizations have a good level of generality. 
+This shows that the optimisations have a good level of generality. 
 What could not be shown is the applicability of these techniques to platforms of other GPU designers, like AMD, and could be an interesting topic for future work.
 However, AMD uses a similar runtime and framework to CUDA and the GPUs have similar architectures.
-Therefore, one could assume that the same optimizations hold.
+Therefore, one could assume that the same optimisations hold.

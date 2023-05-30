@@ -10,8 +10,8 @@ The execution is defined as only the reduction and not the copying of the data t
 
 All achieved bandwidths shown in this chapter will be done on a Nvidia GeForce RTX 3070 (max. bandwidth: 448 GB/s, CUDA version: 11.5) with an input array of \( 2^{28} (1.3\cdot 10^8)\) 32-bit integers. 
 This is a relatively new GPU (released Q4 2020).
-The GPU and the software that comes with it already have optimizations implemented that might mess with the results.
-To this end, data from a Nvidia G80 (max. bandwidth: 86.4 GB/s, CUDA version: 1.1) is provided as well published by \cite{Harris}.
+The GPU and the software that comes with it already have optimisations implemented that might mess with the results.
+To this end, data from a Nvida G80 (max. bandwidth: 86.4 GB/s, CUDA version: 1.1) is provided as well published by \cite{Harris}.
 All measurements are done 1000 times to estimate the statistical error on the results.
 The results are presented merely to give a first impression on the effectiveness of the various changes on the kernel.
 In the last chapter, the performance will be investigated more closely and on several different GPUs.
@@ -37,15 +37,15 @@ The starting point is the kernel presented in the last chapter.
 In order to setup a timing routine, a wrapper was written, which executes the full reduction, i.e., it calls the kernel repeatedly with the required amount of blocks for each outer step until the reduction is fully done. 
 Since the wrapper runs on the host, some of the execution time is spent on the CPU, but for large enough arrays this part becomes negligible small.
 Another addition to execution time is the call to the routine \texttt{cudaMemset()} which sets the memory of the device to a specified value.
-This is required for the aforementioned zero-padding.
+This is required for the aforementioned zeropadding.
 Again, the additional execution time is negligible.
-For the naive kernel a bandwidth of 127.1 (\(\pm 1.0\% \)) GB/s was measured on the RTX 3070.
+For the naive kernel a bandwidth of 127.1 (\(\pm 1.0\% \)) GBytes/s was measured.
 
 \section{Divergent warps}
 The first problem that needs to be dealt with is divergent warps.
 The threads of a streaming multiprocessor (SM) are clustered into so-called warps or SIMD (single instruction multiple data) lanes or vectors.
 Usually, one warp contains 32 threads and they are grouped with increasing \texttt{threadIdx.x}, i.e., threads 0 to 31 are one warp, 32 to 63 are one warp, etc.
-These threads are always synchronized in the sense that they execute the same instruction but act on different regions of memory (hence the name SIMD).
+These threads are always synchronised in the sense that they execute the same instruction but act on different regions of memory (hence the name SIMD).
 If one thread in a warp was to execute a different instruction than the rest, which in CUDA happens through if-statements, all other threads are masked off (i.e. they still run but have no affect on memory).
 This is a highly inefficient procedure! 
 Consider the following worst case example:
@@ -58,7 +58,7 @@ The first one is to use different blocks, i.e., use \texttt{blockIdx.x} in the i
 This has two other disadvantages though.
 First, a whole SM is used to run the execution path of a single thread.
 Secondly, the threads cannot be synchronized afterwards.
-If one needs to add a barrier, basically a new and separate kernel invocation is required.
+If one needs to add a barrier, basically a new and seperate kernel invocation is required.
 The better solution is to use different warps:
 \lstinputlisting[language=C]{code/divergent_warps_fixed.cu}
 Each of the four paths are now running on different warps and therefore in parallel.
@@ -77,39 +77,39 @@ This can be simply done by rewriting the for-loop:
 \lstinputlisting[language=C]{code/kernel1_ifstatement.cu}
 Also, the costly \texttt{\%}-operator vanishes this way.
 
-On the RTX 3070 the new bandwidth is 176.0 (\( \pm 0.9\% \))GB/s, which is an increase of roughly 38\%.
+On the RTX 3070 the new bandwidth is 176.0 (\( \pm 0.9\% \))GBytes/s, which is an increase of roughly 38\%.
 In theory one would expect an increase close to 100\%, and as a matter of fact, on older GPUs (Nvidia G80) with an older CUDA compiler, one actually achieves this.
-The reason most likely is, that modern flow control units and compilers are able to do this optimization to some degree by themselves, which means that the naive kernel already had some sort of divergent warp prevention.
+The reason here most likely is, that modern flow control units and compilers are able to do this optimisation to some degree by themselves, which means that the naive kernel already had some sort of divergent warp prevention.
 Still a 38\% increase is non-negligible.
 
 \section{Memory bank conflicts}
 
-\begin{figure}
+\begin{figure} \label{fig_coalesced_reduction}
     \centering
     \includegraphics{coalesced_reduction.pdf}
     \caption{
         Depicted is the same algorithm as in fig. \ref{fig_naive_reduction} for 8 elements.
         However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous.
         Note that one needs to be careful not to introduce an additional race condition when accessing the elements.
-    } \label{fig_coalesced_reduction}
+    }
 \end{figure}
 
-A similar problem to the divergent warps appears when accessing the ultra-fast shared cache.
+A similar problem to the divergent warps appears when accessing the ulta-fast shared cache.
 This memory is divided into 32 so called memory banks where each bank has a bandwidth of 32 bits per clock cycle.
-The mapping of the address space to the banks is done periodically, i.e., 
+The mapping of the adress space to the banks is done periodically, i.e., 
 \begin{equation}
-\mathrm{bank\ number} = \mathrm{address} \mod 32
+\mathrm{bank\ number} = \mathrm{adress} \mod 32
 \end{equation}
 Two threads cannot access the same bank in the same clock cycle.
 If this case appears, the warp(s) of the two threads is(are) frozen for one cycle and the memory loads/stores are done sequentially.
-One exception is, when the two threads load from the same address.
+One exception is, when the two threads load from the same adress.
 In this case a broadcast operation is done, which requires no freezing.
 
 Usually, memory bank conflicts are not completely avoidable, but should be reduced to a minimum.
 This can be achieved by memory coalescing, i.e., keeping the data that is being worked on contiguous in memory.
 In our case, the memory is not coalesced, which can be seen in fig. \ref{fig_naive_reduction}.
 After the first step there are "holes" in the data which is being accessed in the next step.
-This effectively halves the bandwidth of the shared memory in the second step.
+This effectively halfs the bandwidth of the shared memory in the second step.
 After the second step, it only gets worse.
 The bandwidth for the third step is effectively quartered.
 Since after each step the amount of data is also halved, this leads to an overall avoidable slow-down of roughly 50\%.
@@ -121,57 +121,57 @@ In terms of code this requires only a slight modification to the for-loop of the
 \lstinputlisting[language=C]{code/kernel2_forloop.cu}
 The order of the for-loop was reversed and the thread index can be used again for accessing the array.
 
-With this a bandwidth of 185.1 (\( \pm 1.1\% \)) GB/s was achieved on the RTX 3070, which is an increase of roughly 5\%.
+With this a bandwidth of 185.1 (\( \pm 1.1\% \)) GBytes/s was achieved on the RTX 3070, which is an increase of roughly 5\%.
 Again, on the older setup with the G80 the expected speedup of 100\% was achieved.
-The difference most likely stems from the compiler and flow control unit optimizations present in the newer setup.
+The difference most likely stems from the compiler and flow control unit optimisations present in the newer setup.
 
 
 \section{Idle threads after load}
-While the last two optimizations were purely based on the architecture of the GPU, the next optimization is of algorithmic character and more specific to tree reductions.
+While the last two optimisations were purely based on the architecture of the GPU, the next optimisation is of algorithmic character and more specific to tree reductions.
 The first step in the kernel is to load the data into the shared memory:
 \lstinputlisting[language=C]{code/kernel2_load_and_add.cu}
 Here each thread of the kernel is active.
 However, after the load, i.e., in the first inner step, already half of the threads idle.
-One can make better use of these threads and optimize the first step by combining loading and the first step of addition:
+One can make better use of these threads and optimise the first step by combining loading and the first step of addition:
 \lstinputlisting[language=C]{code/kernel3_load_and_add.cu}
-One block of threads now loads double the amount of data, i.e., the data that was earlier assigned to two blocks.
+One block of threads now loads double the amount of data, i.e., the data that was ealier assigned to two blocks.
 This means that the kernel needs to be invoked with only half the amount of blocks.
-On the RTX 3070 the measured bandwidth is 346.4 (\( \pm 0.4\% \)) GB/s, which is an increase of roughly 87\%.
+On the RTX 3070 the measured bandwidth is 346.4 (\( \pm 0.4\% \)) GBytes/s, which is an increase of roughly 87\%.
 On the G80 a speedup of 78\% was achieved.
 
 
-\section{Implicit synchronization within a warp}
+\section{Implicit synchronisation within a warp}
 As mentioned before, threads within a warp are implicitly synchronized by hardware constraints if they do not branch.
 If they branch, threads of the same branch are still synchronized.
 This can be used to remove some \texttt{\_\_syncthreads()} calls.
 In our case, if \texttt{stride} \(\le\) 32, all non-idling threads are in a single warp. 
-This means they are synchronized per se and no synchronization barrier is required anymore.
+This means they are synchronized per se and no synchronisation barrier is required anymore.
 Additionally, for \texttt{stride} \(<\) 32, threads are divergent within one branch, which can be fixed by simply leaving the if-statement out in this case.
 
 These changes are best implemented by writing a subroutine where the for-loop is unrolled explicitly for the case of \texttt{stride} \(\le\) 32:
 \lstinputlisting[language=C]{code/kernel4_subroutine.cu}
 The \texttt{\_\_device\_\_} statement declares the function to be a subroutine of the kernel.
 This function can only be called from the kernel.
-The \texttt{volatile} specifier is required to avoid compiler optimizations, that mess with the shared memory.
-Note that no if statements and no synchronization barriers are required anymore.
+The \texttt{volatile} specifier is required to avoid compiler optimisations, that mess with the shared memory.
+Note that no if statements and no synchronisation barriers are required anymore.
 
 The kernel itself changes to:
 \lstinputlisting[language=C]{code/kernel4_forloop.cu}
 The domain of the for-loop is shortened and the subroutine is called afterwards.
 
-The achieved bandwidth on the RTX 3070 is 413.0 (\( \pm 0.7\% \)) GB/s, which is an increase of roughly 20\%.
+The achieved bandwidth on the RTX 3070 is 413.0 (\( \pm 0.7\% \)) GBytes/s, which is an increase of roughly 20\%.
 The setup with the G80 achieved a speedup of 80\%.
-Unrolling for-loops is a classic compiler optimization and most likely the reason for the discrepancy.
+Unrolling for-loops is a classic compiler optimisation and most likely the reason for the discrepancy.
 Note that we are not only comparing the hardware differences between the G80 and the RTX 3070 but also the compiler differences between CUDA 1.1 and CUDA 11.5, which is roughly a 14 year difference.
 
 A word of warning is required here.
-Implicit synchronization is considered a bad practice as the code does not explicitly show, that the threads a re synchronized (no call to a blocking function).
+Implicit synchronisation is considered a bad practice as the code does not explicitly show, that the threads a re synchronised (no call to a blocking function).
 New versions of CUDA feature a function \texttt{\_\_syncwarps()} which explicitly synchronizes threads within a warp.
 This achieves the same goal, but with much better readability.
-We omitted this function, to put emphasis on the implicit synchronization by the GPU.
+We omitted this function, to put emphasis on the implicit synchronisation by the GPU.
 
 \section{Conclusion}
-\begin{table}
+\begin{table} \label{tab_reduce_performance}
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -185,27 +185,27 @@ We omitted this function, to put emphasis on the implicit synchronization by the
         \hline
         Idle threads after load & 17.3 & 346.4 \\
         \hline
-        Implicit synchronization & 31.3 & 413.0 \\
+        Implicit synchronisation & 31.3 & 413.0 \\
         \hline
     \end{tabular}
     \caption{
-        Listed are the bandwidths in GB/s that the G80 (CUDA version 1.1, max. bandwidth: 86.4 GB/s) and the RTX 3070 (CUDA version 11.5, max. bandwidth: 448 GB/s) achieved with the respective level of optimization.
-    } \label{tab_reduce_performance}
+        Listed are the bandwidths in GB/s that the G80 (CUDA version 1.1, max. bandwidth: 86.4 GB/s) and the RTX 3070 (CUDA version 11.5, max. bandwidth: 448 GB/s) achieved with the respective level of optimisation.
+    }
 \end{table}
-At this point we have achieved a level of optimization on the RTX 3070, which makes use of 92\% of the total memory bandwidth.
-This can be considered as close to optimal and further optimizations are unlikely to yield a significant speedup.
+At this point we have achieved a level of optimisation on the RTX 3070, which makes use of 92\% of the total memory bandwidth.
+This can be considered as close to optimal and further optimisations are unlikely to yield a significant speedup.
 However, on the G80, not even 50\% of the maximum bandwidth was achieved.
-Two further optimizations are presented in detail in \cite{Harris} which achieve 85\% on the G80:
+Two further optimisations are presented in detail in \cite{Harris} which achieve 85\% on the G80:
 
 First, one could reduce the instruction overhead by further loop-unrolling.
 E.g., using C++ templates, which are supported by CUDA, one could completely unroll the for-loop, assuming that either the number of threads per block are known at compile time or is a power of two.
 
 Secondly, one could make a parallel-serial trade-off.
-While parallelization is good - especially if it is work-efficient (i.e. the algorithm requires the same work in serial or parallel) - it does create an overhead.
-This overhead could potentially be decreased by letting each thread also do serial addition over a certain amount of array elements before starting the tree reduction.
+While parallelisation is good - especially if it is work-efficient (i.e. the algorithm requires the same work in serial or parallel) - it does create an overhead.
+This overhead could potentially be decreased by letting each thread also do serial addition over a certain amout of array elements before starting the tree reduction.
 Such a procedure is often called "algorithm cascading".
 
-In the next chapter the final version of the kernel will be investigated more closely in respect to its performance on a GPU designed for scientific calculations (Nvidia A100), its scaling with larger and smaller array sizes and its behavior when working with different data types (float, double, 64-bit integers).
+In the next chapter the final version of the kernel will be investigated more closely in respect to its performance on a GPU designed for scientific calculations (Nvidida A100), its scaling with larger and smaller array sizes and its behaviour when working with different data types (float, double, 64-bit integers).
 
 
 

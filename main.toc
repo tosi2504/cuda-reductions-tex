@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{}%
 \contentsline {section}{\numberline {1.1}From single-core CPUs over multi-core CPUs to GPUs}{3}{}%
-\contentsline {section}{\numberline {1.2}What is CUDA}{5}{}%
+\contentsline {section}{\numberline {1.2}Introduction to CUDA}{5}{}%
 \contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{6}{}%
 \contentsline {section}{\numberline {2.1}The importance of reductions}{6}{}%
 \contentsline {section}{\numberline {2.2}The tree reduction algorithm}{6}{}%
@@ -13,11 +13,11 @@
 \contentsline {section}{\numberline {3.1}Starting point: The naive kernel}{14}{}%
 \contentsline {section}{\numberline {3.2}Divergent warps}{15}{}%
 \contentsline {section}{\numberline {3.3}Memory bank conflicts}{16}{}%
-\contentsline {section}{\numberline {3.4}Idle threads after load}{17}{}%
-\contentsline {section}{\numberline {3.5}Implicit synchronisation within a warp}{18}{}%
+\contentsline {section}{\numberline {3.4}Idle threads after load}{18}{}%
+\contentsline {section}{\numberline {3.5}Implicit synchronization within a warp}{18}{}%
 \contentsline {section}{\numberline {3.6}Conclusion}{19}{}%
-\contentsline {chapter}{\numberline {4}Benchmarks}{20}{}%
-\contentsline {section}{\numberline {4.1}Parallelisation parameters}{20}{}%
-\contentsline {section}{\numberline {4.2}Scaling of the performance towards larger and smaller array sizes}{20}{}%
-\contentsline {section}{\numberline {4.3}Dependence of the performance on the datatype}{22}{}%
-\contentsline {section}{\numberline {4.4}Conclusion}{22}{}%
+\contentsline {chapter}{\numberline {4}Benchmarks}{21}{}%
+\contentsline {section}{\numberline {4.1}Parallelization parameters}{21}{}%
+\contentsline {section}{\numberline {4.2}Scaling of the performance towards larger and smaller array sizes}{21}{}%
+\contentsline {section}{\numberline {4.3}Dependence of the performance on the datatype}{23}{}%
+\contentsline {section}{\numberline {4.4}Conclusion}{23}{}%
