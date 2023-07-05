@@ -77,7 +77,7 @@ This can be simply done by rewriting the for-loop:
 \lstinputlisting[language=C]{code/kernel1_ifstatement.cu}
 Also, the costly \texttt{\%}-operator vanishes this way.
 
-On the RTX 3070 the new bandwidth is 176.0 (\( \pm 0.9\% \))GB/s, which is an increase of roughly 38\%.
+On the RTX 3070 the new bandwidth is 176.0 (\( \pm 0.9\% \)) GB/s, which is an increase of roughly 38\%.
 In theory one would expect an increase close to 100\%, and as a matter of fact, on older GPUs (Nvidia G80) with an older CUDA compiler, one actually achieves this.
 The reason most likely is, that modern flow control units and compilers are able to do this optimization to some degree by themselves, which means that the naive kernel already had some sort of divergent warp prevention.
 Still a 38\% increase is non-negligible.
@@ -88,7 +88,7 @@ Still a 38\% increase is non-negligible.
     \centering
     \includegraphics{coalesced_reduction.pdf}
     \caption{
-        Depicted is the same algorithm as in fig. \ref{fig_naive_reduction} for 8 elements.
+        Depicted is the same algorithm as in Fig. \ref{fig_naive_reduction} for 8 elements.
         However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous.
         Note that one needs to be careful not to introduce an additional race condition when accessing the elements.
     } \label{fig_coalesced_reduction}
@@ -107,7 +107,7 @@ In this case a broadcast operation is done, which requires no freezing.
 
 Usually, memory bank conflicts are not completely avoidable, but should be reduced to a minimum.
 This can be achieved by memory coalescing, i.e., keeping the data that is being worked on contiguous in memory.
-In our case, the memory is not coalesced, which can be seen in fig. \ref{fig_naive_reduction}.
+In our case, the memory is not coalesced, which can be seen in Fig. \ref{fig_naive_reduction}.
 After the first step there are "holes" in the data which is being accessed in the next step.
 This effectively halves the bandwidth of the shared memory in the second step.
 After the second step, it only gets worse.
@@ -116,7 +116,7 @@ Since after each step the amount of data is also halved, this leads to an overal
 
 The solution to this problem is simple.
 One needs to write the results of each addition back into memory in such a way, that the data stays coalesced.
-This is depicted in fig. \ref{fig_coalesced_reduction}.
+This is depicted in Fig. \ref{fig_coalesced_reduction}.
 In terms of code this requires only a slight modification to the for-loop of the kernel:
 \lstinputlisting[language=C]{code/kernel2_forloop.cu}
 The order of the for-loop was reversed and the thread index can be used again for accessing the array.
@@ -165,7 +165,7 @@ Unrolling for-loops is a classic compiler optimization and most likely the reaso
 Note that we are not only comparing the hardware differences between the G80 and the RTX 3070 but also the compiler differences between CUDA 1.1 and CUDA 11.5, which is roughly a 14 year difference.
 
 A word of warning is required here.
-Implicit synchronization is considered a bad practice as the code does not explicitly show, that the threads a re synchronized (no call to a blocking function).
+Implicit synchronization is considered a bad practice as the code does not explicitly show, that the threads are synchronized (no call to a blocking function).
 New versions of CUDA feature a function \texttt{\_\_syncwarps()} which explicitly synchronizes threads within a warp.
 This achieves the same goal, but with much better readability.
 We omitted this function, to put emphasis on the implicit synchronization by the GPU.
@@ -195,7 +195,7 @@ We omitted this function, to put emphasis on the implicit synchronization by the
 At this point we have achieved a level of optimization on the RTX 3070, which makes use of 92\% of the total memory bandwidth.
 This can be considered as close to optimal and further optimizations are unlikely to yield a significant speedup.
 However, on the G80, not even 50\% of the maximum bandwidth was achieved.
-Two further optimizations are presented in detail in \cite{Harris} which achieve 85\% on the G80:
+Two further optimizations are presented in detail in \cite{Harris} which achieve 85\% of maximum bandwidth on the G80:
 
 First, one could reduce the instruction overhead by further loop-unrolling.
 E.g., using C++ templates, which are supported by CUDA, one could completely unroll the for-loop, assuming that either the number of threads per block are known at compile time or is a power of two.
@@ -205,7 +205,7 @@ While parallelization is good - especially if it is work-efficient (i.e. the alg
 This overhead could potentially be decreased by letting each thread also do serial addition over a certain amount of array elements before starting the tree reduction.
 Such a procedure is often called "algorithm cascading".
 
-In the next chapter the final version of the kernel will be investigated more closely in respect to its performance on a GPU designed for scientific calculations (Nvidia A100), its scaling with larger and smaller array sizes and its behavior when working with different data types (float, double, 64-bit integers).
+In the next chapter the final version of the kernel will be investigated more closely with respect to its performance on a GPU designed for scientific calculations (Nvidia A100), its scaling with larger and smaller array sizes and its behavior when working with different data types (float, double, 64-bit integers).
 
 
 

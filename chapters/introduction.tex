@@ -23,7 +23,7 @@
         Generally the cache hierachry is more complicated as depicted in the figure.
         However, the defining property here is that there exists a non-global cache level that is assigned to a group of ALUs, namely the SMs. 
         Figure inspired by \cite{programming_guide}.
-        } \label{fig_tree_reduction}
+        } \label{fig_cpu_vs_gpu}
 \end{figure}
 
 With the invention of the MOS transistor in 1959 and more specifically the silicon-gate MOS transistor in 1968 the development of single-chip microprocessors started.
@@ -36,12 +36,12 @@ In 2006 the first desktop PCs with two cores were sold and ever since the number
 There was one problem in particular, however, that CPUs (Central Processing Unit) were not efficient in rendering graphics.
 This task requires a lot of independent calculations that needed to be done in real time - a prime example for a massively parallelizable computation.
 Since rendering graphics requires such a different type of computing, GPUs (Graphics Processing Unit) were developed even before the first consumer grade multi-core CPUs (e.g. the Nvidia GeForce 256 published in 1999).
-These GPUs featured less single thread computation power but have a high number of threads.
+These GPUs featured less single thread computation power but have a high number of threads (see Fig. \ref{fig_cpu_vs_gpu}).
 State of the art GPUs have thousands of threads.
 This being said, the number of threads cannot be easily compared between a CPU and a GPU or even between different GPUs as they follow different design paradigms.
 How the GPU threads work will be explored in this work.
 Generally, one can say that GPUs perform well in massively parallelizable computations (e.g. numerical linear algebra) while CPUs excel at single (or low number) threaded applications (e.g. running the event loop of a desktop application).
-This shift to a higher number of threads rather than thread quality has been greatly motivated by scientific calculations, machine learning and graphics.
+This shift to a higher number of threads rather than thread quality has been greatly motivated by scientific calculations, machine learning and computer graphics.
 
 In this work, the basics of GPU programming in CUDA will be introduced and a very important algorithm presented, namely the tree reduction.
 Using this algorithm as an example, a deeper look into the architecture of GPUs and the CUDA programming language will bring forth various optimizations.

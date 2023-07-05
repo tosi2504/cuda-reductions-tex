@@ -3,7 +3,7 @@ The goal of this chapter is to investigate the properties of the optimized kerne
 The following question will be answered:
 How should the parallelization parameters (in our case only the number of threads per block) be chosen?
 How does the kernel scale with larger and smaller array sizes?
-How does the underlying data type (int32, int64, float, double, complex float, complex double) affect performance?
+How does the underlying data type (int32, int64, float, double) affect performance?
 
 
 \section{Parallelization parameters}
@@ -41,13 +41,13 @@ For the rest of the benchmarks we will therefore use 256 threads per block.
 \end{figure}
 
 Oftentimes, the GPUs only start to be effective for large problem sizes.
-This behavior is depicted in fig. \ref{fig_scaling}.
+This behavior is depicted in Fig. \ref{fig_scaling}.
 The expected linear scaling in problem size is only achieved after a certain threshold.
 The cause of this is most likely host code overhead, parallelization overhead and device latency.
 Interestingly, the RTX 3070 performs better for small array sizes.
 This might be very setup dependent, however (host memory speed, CPU, etc).
 
-Both GPUs converge towards 92\% of their respective bandwidths (RTX 3070: 448 GB/s, A100: 1.555 GB/s).
+Both GPUs converge towards 92\% of their respective peak bandwidths (RTX 3070: 448 GB/s, A100: 1.555 GB/s).
 The A100 is approximately three times faster than the RTX 3070.
 
 \section{Dependence of the performance on the datatype}
@@ -64,7 +64,7 @@ The A100 is approximately three times faster than the RTX 3070.
 \end{figure}
 
 The execution time also dependents on the underlying datatype.
-In our case this dependence is depicted in fig. \ref{fig_datatypes}.
+In our case this dependence is depicted in Fig. \ref{fig_datatypes}.
 In the case of the RTX 3070 the execution time is perfectly proportional to the bit size of the datatype.
 This is expected as the reduction algorithm is bottlenecked by bandwidth.
 Interestingly, this behavior is not so trivial for the A100.

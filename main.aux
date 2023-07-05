@@ -26,7 +26,7 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig_cpu_trend}{{1.1}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces  Comparison of the basic architectural differences of a CPU and a GPU. In green the random access memory (RAM), in yellow the cache, in blue the flow control unit and in red the arithmetic-logic unit (ALU). Both designs feature a RAM that all threads have access to. The GPU is split into many small "CPUs" (vertical groups) with their own flow control and cache. These are called streaming multiprocessors (SMPs or SMs). Generally the cache hierachry is more complicated as depicted in the figure. However, the defining property here is that there exists a non-global cache level that is assigned to a group of ALUs, namely the SMs. Figure inspired by \blx@tocontentsinit {0}\cite {programming_guide}. \relax }}{4}{}\protected@file@percent }
-\newlabel{fig_tree_reduction}{{1.2}{4}}
+\newlabel{fig_cpu_vs_gpu}{{1.2}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Introduction to CUDA}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Tree Reduction on GPUs}{6}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -68,7 +68,7 @@
 \@writefile{lol}{\contentsline {lstlisting}{code/kernel0\textunderscore ifstatement.cu}{16}{}\protected@file@percent }
 \@writefile{lol}{\contentsline {lstlisting}{code/kernel1\textunderscore ifstatement.cu}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Memory bank conflicts}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Depicted is the same algorithm as in fig. 2.2\hbox {} for 8 elements. However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous. Note that one needs to be careful not to introduce an additional race condition when accessing the elements. \relax }}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Depicted is the same algorithm as in Fig. 2.2\hbox {} for 8 elements. However, this time the results of the addition of two cells is written into memory, such that the data stays contiguous. Note that one needs to be careful not to introduce an additional race condition when accessing the elements. \relax }}{17}{}\protected@file@percent }
 \newlabel{fig_coalesced_reduction}{{3.1}{17}}
 \@writefile{lol}{\contentsline {lstlisting}{code/kernel2\textunderscore forloop.cu}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Idle threads after load}{18}{}\protected@file@percent }
